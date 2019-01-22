@@ -261,29 +261,42 @@ kern_write((void*)KERN_DRVPTR, drvhax[0x48/4]);     // (OSDriver *)drvhax->next_
 
 # GG, Now we have Kernel R/W and we can get kernel code execution by adding our own syscalls.
 
+. 
+
+. 
+
 .
+
 .
+
 .
-.
-.
+
 
 **Coming next:** How do we exit the entrypoint and loads the HBL ? (haxchi/Internet Browser)
 
 That was really long to type, there are probably a lot of typo and missing zero's in the hex values.
 Message me about them so i can fix it.
 
-#Source:
+# Source:
 
 https://github.com/wiiudev/libwiiu/blob/master/kernel/gx2sploit/src/loader.c
+
 https://github.com/plutooo/wiiu/tree/master/notes/ppc_kernel
+
 http://wiiubrew.org/
 
+.
+
 /Exploits
+
 /Cafe_OS
+
 /Cafe_OS_Syscalls
+
 
 And my own reverse-engineering:
 
 Thanks for reading,
-    NexoCube
+
+**NexoCube**
 
