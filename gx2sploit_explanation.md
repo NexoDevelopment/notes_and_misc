@@ -174,7 +174,7 @@ s32 heap_alloc(heap_ctx_t *heap, s32 size)
 heap_block_t *block = (heap_block_t*)(heap + 0x14 + (idx * 0x10));
 ```
 
-Nice job Nintendo, another yet Integer Overflow. (if we can control the index, aka ``heap_ctx_t->first_index``)
+**Nice job Nintendo, another yet Integer Overflow.** (if we can control the index, aka ``heap_ctx_t->first_index``)
 
 Imagine we control the index and we set it to 0x02000000. When the kernel will allocate it will be like that:
 
