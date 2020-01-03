@@ -210,9 +210,15 @@ It creates a detached thread on CPU0. We do ROP since codegen is only mapped for
 uint32_t kpaddr = KERN_HEAP_PHYS + 8; // STARTID_OFFSET = 8
 ```
 
-**Now we setup our ROP Chain in the stack, and basically the thread will write to the physical address defined by  ``kpaddr`` using raw GPU Commands that will modify a semaphore.**
+very quick
 
-We use ``GX2SetSemaphore + 0x2C`` so we can skip the ``EffectiveToPhysical`` translation. And it probably do something idk, please help lmao.
+GPU has RW access to the kernel heap
+
+signal a fake semaphore on the kernel heap
+
+this will increment the data at the address by 1
+
+do this twice and you have the perfect ``first_index`` (0x**02**000000)
 
 # Part 4: Patching the kernel (Line 126 to 143)
 
